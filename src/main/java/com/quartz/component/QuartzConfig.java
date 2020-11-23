@@ -1,7 +1,8 @@
-package com.quartz.demo.component;
+package com.quartz.component;
 
 import java.util.Calendar;
 import java.util.Properties;
+
 import javax.sql.DataSource;
 
 import org.apache.commons.lang3.ArrayUtils;
@@ -19,8 +20,6 @@ import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
 import org.springframework.scheduling.quartz.SpringBeanJobFactory;
 
 import lombok.extern.slf4j.Slf4j;
-
-
 
 @Slf4j
 @Configuration

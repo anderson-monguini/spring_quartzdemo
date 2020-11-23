@@ -1,4 +1,4 @@
-package com.quartz.demo.quartz;
+package com.quartz.quartz;
 
 import org.quartz.DisallowConcurrentExecution;
 import org.quartz.JobExecutionContext;
