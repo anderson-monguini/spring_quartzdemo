@@ -15,7 +15,7 @@ import lombok.extern.slf4j.Slf4j;
 @Configuration
 public class CronTrigger {
 	
-	private static final String CRON_CONFIG = "0 0/1 * * * ? *";
+	private static final String CRON_SCHEDULE="0 0/1 * * * ? *";
 	
     @Bean(name = "ReenviaPix")
     public JobDetailFactoryBean jobReenviaPix() {
@@ -24,6 +24,6 @@ public class CronTrigger {
     
     @Bean(name = "ReenviaPixTrigger")
     public CronTriggerFactoryBean triggerReenviaPix (@Qualifier("ReenviaPix") JobDetail jobDetail) {
-    	return QuartzConfig.createCronTrigger(jobDetail, CRON_CONFIG, "Class Statistics Trigger");
+    	return QuartzConfig.createCronTrigger(jobDetail, CRON_SCHEDULE, "Class Statistics Trigger");
     }	
 }

@@ -6,6 +6,7 @@ import java.util.Properties;
 import javax.sql.DataSource;
 
 import org.apache.commons.lang3.ArrayUtils;
+import org.quartz.CronExpression;
 import org.quartz.CronTrigger;
 import org.quartz.JobDetail;
 import org.quartz.SimpleTrigger;
@@ -24,12 +25,15 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Configuration
 public class QuartzConfig {
+	
     private ApplicationContext applicationContext;
     private DataSource dataSource;
+    private CronExpression cronExpression;
 
     public QuartzConfig(ApplicationContext applicationContext, DataSource dataSource) {
         this.applicationContext = applicationContext;
         this.dataSource = dataSource;
+        this.cronExpression = cronExpression;
     }
 
     @Bean

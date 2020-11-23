@@ -18,7 +18,6 @@ public class PixModel {
 	}
 	
 	@Id
-	@NotNull
 	@GeneratedValue(strategy= GenerationType.AUTO)
 	@Column (name="idpix")
 	private Integer idpix;
