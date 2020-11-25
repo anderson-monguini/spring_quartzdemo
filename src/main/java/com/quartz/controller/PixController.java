@@ -21,14 +21,20 @@ public class PixController {
 	@Autowired
 	private PixTesteRepository pixTesteRepository;
 	
-	@RequestMapping(value = "/cadastropix", method =  RequestMethod.POST)
+	@RequestMapping(value = "/cadastropix", method =  RequestMethod.POST , consumes = "application/json")
 	public @ResponseBody PixModel cadastraPix(@RequestBody PixModel pix) {
 		this.pixRepository.save(pix);
 		return pix;
 	}
 	
-	@RequestMapping(value = "/pixteste", method =  RequestMethod.POST)
+	@RequestMapping(value = "/pixteste", method =  RequestMethod.POST, consumes = "application/json")
 	public @ResponseBody PixTeste cadastraPix(@RequestBody PixTeste pix) {
+		this.pixTesteRepository.save(pix);
+		return pix;
+	}
+	
+	@RequestMapping(value = "/pixteste", method =  RequestMethod.PATCH, consumes = "application/json")
+	public @ResponseBody PixTeste updatePix(@RequestBody PixTeste pix) {
 		this.pixTesteRepository.save(pix);
 		return pix;
 	}
