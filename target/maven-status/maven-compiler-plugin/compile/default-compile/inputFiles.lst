@@ -1,11 +1,10 @@
-C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\component\AutowiringSpringBeanJobFactory.java
-C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\component\QuartzConfig.java
+C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\model\PixTeste.java
 C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\repository\PixRepository.java
-C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\component\CronTrigger.java
 C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\model\PixModel.java
-C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\component\SchedulerJobFactory.java
 C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\Application.java
+C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\configuration\SchedulerConfiguration.java
 C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\jobs\ReenviaPix.java
 C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\controller\PixController.java
 C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\repository\PixServiceImpl.java
-C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\quartz\CustomQuartzJob.java
+C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\repository\PixTesteRepository.java
+C:\Users\son_t\Documents\Quartz\src\main\java\com\quartz\repository\PixTesteServiceImpl.java
