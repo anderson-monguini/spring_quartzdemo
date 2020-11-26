@@ -1,5 +1,6 @@
 package com.quartz.jobs;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -44,8 +45,10 @@ public class ReenviaPix {
 	  
 	EntityManager em = entityManager; List<PixModel> list = new
 	ArrayList<PixModel>(); TypedQuery<PixModel> 
-	query =	em.createQuery("from PixModel where statuspix='erro'", PixModel.class); 
+	query =	em.createQuery("from PixModel where statuspix='erro' AND data_gmud > DATE_ADD(NOW(), INTERVAL -2 DAY", PixModel.class); 
 	list= query.getResultList();
+	
+	//"from PixModel where statuspix='erro' AND data_gmud BETWEEN '2020-11-23' AND '2020-11-23'"
 			
 	for (int i = 0; i < list.size(); i++) {
 		  
@@ -53,16 +56,18 @@ public class ReenviaPix {
 		  
 		  Integer iIdpix = list.get(i).getIdpix();
 		  String iStatuspix = list.get(i).getStatuspix();
+		  LocalDate iData_pix = list.get(i).getData();
 		  
 		  String jsonString = new JSONObject()
                   .put("idpix", iIdpix)
-                  .put("statuspix", iStatuspix)
+                  .put("statuspix", "certo") //.put("statuspix", iStatuspix)
+                  .put("data", iData_pix)
                   .toString();
 
 		  String payload = jsonString; StringEntity entity = new
 		  StringEntity(payload,org.apache.http.entity.ContentType.APPLICATION_JSON);
 		  HttpClient httpClient = HttpClientBuilder.create().build(); 
-		  HttpPatch request = new HttpPatch("http://localhost:8080/pixteste"); request.setEntity(entity);
+		  HttpPatch request = new HttpPatch("http://localhost:8080/cadastropix"); request.setEntity(entity);
 		  HttpResponse response = httpClient.execute(request);
 			  
 		  System.out.println(response.getStatusLine().getStatusCode());
@@ -72,5 +77,6 @@ public class ReenviaPix {
 			  System.out.println("Vixe mano, deu erro !");
 	  }
 	}
+	System.out.println("LISTA VAZIA");
   }
 }

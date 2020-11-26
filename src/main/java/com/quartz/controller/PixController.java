@@ -27,6 +27,12 @@ public class PixController {
 		return pix;
 	}
 	
+	@RequestMapping(value = "/cadastropix", method =  RequestMethod.PATCH , consumes = "application/json")
+	public @ResponseBody PixModel atualizaPix(@RequestBody PixModel pix) {
+		this.pixRepository.save(pix);
+		return pix;
+	}
+	
 	@RequestMapping(value = "/pixteste", method =  RequestMethod.POST, consumes = "application/json")
 	public @ResponseBody PixTeste cadastraPix(@RequestBody PixTeste pix) {
 		this.pixTesteRepository.save(pix);
